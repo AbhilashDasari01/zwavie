@@ -1,12 +1,70 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: black;
+  overflow: hidden;
+  position: relative;
+}
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background-color: black;
-      overflow: hidden;
-    }
-    canvas {
-      display: block;
-      cursor: pointer;
-    }
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  cursor: pointer;
+}
+
+/* Footer Styles */
+.site-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  color: #f0f0f0;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.2); /* transparent dark overlay */
+  backdrop-filter: blur(6px); /* glass effect */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* subtle glow */
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.site-footer .heart {
+  color: #ff4d4d;
+  text-shadow: 0 0 8px rgba(255, 77, 77, 0.6);
+}
+
+.site-footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  text-shadow: 0 0 6px rgba(255, 211, 105, 0.5);
+}
+
+.site-footer a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  font-size: 22px;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+  text-shadow: 0 0 8px rgba(255, 211, 105, 0.4);
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+}

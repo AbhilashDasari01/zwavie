@@ -1,5 +1,8 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
+const footer = document.querySelector(".site-footer");
+const footerLinks = footer.querySelectorAll("a, .heart, .social-icons a");
+
 let width = canvas.width = window.innerWidth;
 let height = canvas.height = window.innerHeight;
 
@@ -58,6 +61,17 @@ navigator.mediaDevices.getUserMedia({ audio: true })
       const subBass = getAvgInRange(16, 60);
       const bass = getAvgInRange(60, 250);
 
+      // Footer glow update
+    const glow = Math.min((bass - 100) / 100, 1); // normalize bass to 0–1
+    const boxGlow = 20 + glow * 30;
+    const opacity = 0.2 + glow * 0.2;
+
+footer.style.boxShadow = `0 0 ${boxGlow}px rgba(255, 255, 255, ${0.2 + glow * 0.4})`;
+footer.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+
+footerLinks.forEach(el => {
+  el.style.textShadow = `0 0 ${6 + glow * 12}px rgba(255, 211, 105, ${0.4 + glow * 0.4})`;
+});
       // Background color change logic
       if (kick < lastKick) {
         kickWasFalling = true;
