@@ -17,6 +17,24 @@ height: 100%;
 z-index: 0;
 cursor: pointer;
 }
+.site-title {
+    font-family: 'Space Grotesk', sans-serif;
+    position: fixed;
+    top: 25px;
+    left: 30px;
+    z-index: 1000;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    pointer-events: none;
+    
+    text-transform: capitalize;
+}
+
+body:fullscreen .site-title {
+    display: none;
+}
 
 /* MODE SWITCH */
 
