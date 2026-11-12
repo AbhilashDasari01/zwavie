@@ -1,70 +1,139 @@
 html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  background-color: black;
-  overflow: hidden;
-  position: relative;
+margin: 0;
+padding: 0;
+height: 100%;
+background-color: black;
+overflow: hidden;
+position: relative;
 }
 
 canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  cursor: pointer;
+position: absolute;
+top: 0;
+left: 0;
+display: block;
+width: 100%;
+height: 100%;
+z-index: 0;
+cursor: pointer;
 }
 
-/* Footer Styles */
+/* MODE SWITCH */
+
+.mode-switch {
+position: absolute;
+top: 25px;
+right: 25px;
+z-index: 200;
+display: flex;
+gap: 8px;
+padding: 6px;
+background: rgba(0, 0, 0, 0.65);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.15);
+border-radius: 30px;
+}
+
+.mode-btn {
+border: none;
+background: transparent;
+color: #888;
+padding: 10px 22px;
+border-radius: 25px;
+cursor: pointer;
+font-weight: bold;
+letter-spacing: 2px;
+transition: all 0.3s ease;
+}
+
+#raveBtn.active {
+color: white;
+background: linear-gradient(135deg, #ff1493, #8000ff);
+box-shadow: 0 0 15px rgba(255, 20, 147, 0.6);
+}
+
+#goldBtn.active {
+color: black;
+background: linear-gradient(135deg, #ffd700, #ffae00);
+box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+.mode-btn:hover {
+color: white;
+}
+
+/* FOOTER */
+
 .site-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  padding: 20px;
-  color: #f0f0f0;
-  font-size: 16px;
-  background-color: rgba(0, 0, 0, 0.2); /* transparent dark overlay */
-  backdrop-filter: blur(6px); /* glass effect */
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* subtle glow */
-  transition: all 0.3s ease;
-  z-index: 100;
+position: absolute;
+bottom: 0;
+width: 100%;
+box-sizing: border-box;
+text-align: center;
+padding: 20px;
+color: #f0f0f0;
+font-size: 16px;
+background-color: rgba(0, 0, 0, 0.2);
+backdrop-filter: blur(6px);
+box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+transition: all 0.3s ease;
+z-index: 100;
 }
 
 .site-footer .heart {
-  color: #ff4d4d;
-  text-shadow: 0 0 8px rgba(255, 77, 77, 0.6);
+color: #ff4d4d;
+text-shadow: 0 0 8px rgba(255, 77, 77, 0.6);
 }
 
 .site-footer a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-  text-shadow: 0 0 6px rgba(255, 211, 105, 0.5);
+color: #fff;
+text-decoration: none;
+transition: color 0.3s ease, text-shadow 0.3s ease;
+text-shadow: 0 0 6px rgba(255, 211, 105, 0.5);
 }
 
 .site-footer a:hover {
-  color: #fff;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+color: #fff;
+text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
 .social-icons {
-  margin-top: 10px;
+margin-top: 10px;
 }
 
 .social-icons a {
-  margin: 0 10px;
-  font-size: 22px;
-  color: #fff;
-  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
-  text-shadow: 0 0 8px rgba(255, 211, 105, 0.4);
+margin: 0 10px;
+font-size: 22px;
+color: #fff;
+transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+text-shadow: 0 0 8px rgba(255, 211, 105, 0.4);
 }
 
 .social-icons a:hover {
-  transform: scale(1.2);
-  color: #ffffff;
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+transform: scale(1.2);
+color: #ffffff;
+text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+.mode-switch {
+top: 15px;
+right: 15px;
+}
+
+.mode-btn {
+    padding: 9px 16px;
+    font-size: 12px;
+}
+.site-footer {
+    font-size: 14px;
+    padding: 15px 10px;
+}
+.social-icons a {
+    margin: 0 8px;
+    font-size: 19px;
+}
+
 }
